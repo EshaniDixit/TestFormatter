@@ -1,14 +1,15 @@
 import React from 'react';
-import Timer from './component/Timer';
+import HomePage from './pages/homepage'; // Correct file path and name
+ // Import HomePage component
 
 function App() {
   return (
     <div className="App">
-      <h1>Timer</h1>
-      <Timer />
+      <HomePage /> {/* Render HomePage component */}
     </div>
   );
 }
 
 export default App;
+
 
