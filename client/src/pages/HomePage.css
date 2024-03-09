@@ -1,0 +1,172 @@
+.home-page {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .feature {
+    flex: 0 0 30%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .feature h2 {
+    margin-top: 0;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+/* HomePage.css */
+
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styles for the home page */
+.home-page {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+nav ul li {
+    font-size: 18px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+.features {
+    margin-bottom: 40px;
+}
+
+.features h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container textarea,
+.form-container input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.form-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.section-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-container div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.section-container div:last-child {
+    margin-right: 0;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #666;
+}
