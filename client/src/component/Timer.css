@@ -2,11 +2,10 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #f3efee00;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(246, 240, 240, 0.2);
-  color: hsl(0, 84%, 49%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #121010;
 }
 
 .timer-values {
