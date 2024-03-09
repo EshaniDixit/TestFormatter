@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const multer = require('multer');
 const ocrSpaceApi = require('ocr-space-api');
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: 'uploads/', limits: { fileSize: 10 * 1024 * 1024 } }); // 10 MB limit
+
 router.post('/upload', upload.single('questionPaper'), async (req, res) => {
     try {
         const { questionText } = await ocrSpaceApi.parseImageFromLocalFile(req.file.path, { apiKey: process.env.OCR_API_KEY });
