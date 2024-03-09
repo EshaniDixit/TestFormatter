@@ -102,10 +102,9 @@ function HomePage() {
         <div className="home-page">
             <nav>
                 <ul>
-                    <li><a href="#test-generator">Test Generator</a></li>
                     <li><a href="#upload-pdf">Upload PDF</a></li>
                     <li><a href="#answer-key">Answer Key</a></li>
-                    <li><a href="#tool">Tool</a></li>
+                    <li><a href="#tool">Create Assessment</a></li>
                     <li><a href="#social-space">Social Space</a></li>
                     <li><a href="#test-review">Test Review</a></li>
                     <li><a href="#analytical-side">Analytical Side</a></li>
@@ -117,23 +116,31 @@ function HomePage() {
                 <h1>Welcome to ExamMaster</h1>
                 <p>Your one-stop solution for online mock assessments and exam preparation</p>
             </header>
-            <section id="test-generator" className="features">
-                {/* Test Generator section */}
-            </section>
-            <section id="upload-pdf" className="features">
-                {/* Upload PDF section */}
-            </section>
+            <section id="upload-pdf" class="features">
+    <input type="file" accept="image/*" onChange={handleImageChange} multiple required />
+    <div class="button-container">
+        <button type="submit" class="upload-button">Upload PDF</button>
+        <button type="submit" class="generate-button">GENERATE TESTS</button>
+    </div>
+</section>
+
             <section id="answer-key" className="features">
-                {/* Answer Key section */}
+                <h1>Upload Answers</h1>
+                {<input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        multiple
+                        required
+                    />}
+                    <button type="submit">Upload Answer Key</button>
             </section>
             <section id="tool" className="features">
-                <h2>Tool</h2>
-                <p>Create manual online assessments with text and images:</p>
                 <form onSubmit={handleSubmitAssessment}>
                     <textarea
                         value={assessmentData.text}
                         onChange={handleTextChangeAssessment}
-                        placeholder="Enter assessment text..."
+                        placeholder="Create Assessment...."
                         required
                     ></textarea>
                     <input
@@ -146,11 +153,30 @@ function HomePage() {
                     <button type="submit">Submit Assessment</button>
                 </form>
             </section>
-            <section id="social-space" className="features">
-                {/* Social Space section */}
-            </section>
+            <section id="social-space" class="features">
+    <h2>Social Space</h2>
+    <div class="test-container-wrapper">
+        <div class="test-container">
+            <div class="test-card">
+                <h3>Test 1</h3>
+                <p>Posted by: User123</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum ante quis ipsum fermentum, id tincidunt felis placerat.</p>
+                <button class="attempt-button">Attempt Test</button>
+            </div>
+        </div>
+        <div class="test-container">
+            <div class="test-card">
+                <h3>Test 2</h3>
+                <p>Posted by: User456</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum ante quis ipsum fermentum, id tincidunt felis placerat.</p>
+                <button class="attempt-button">Attempt Test</button>
+            </div>
+        </div>
+    </div>
+</section>
+
             <section id="test-review" className="features">
-                <h2>Test Review</h2>
+                <h2>Test Reviews</h2>
                 <form onSubmit={handleSubmitReview}>
                     <textarea
                         value={reviewData.text}
@@ -164,6 +190,7 @@ function HomePage() {
                         onChange={handleExplanationChange}
                         placeholder="Add an explanation (optional)"
                     />
+                    <p></p>
                     <label>
                         <input
                             type="checkbox"
@@ -175,53 +202,70 @@ function HomePage() {
                     <button type="submit">Submit Review</button>
                 </form>
             </section>
-            <section id="analytical-side" className="features">
-                <h2>Analytical Side</h2>
-                <div>
-                    <p>Time Spent: {analyticsData.timeSpent} seconds</p>
-                    <p>Total Score: {analyticsData.totalScore}</p>
-                    <p>Comparisons with Peers:</p>
-                    <ul>
-                        {analyticsData.comparisonsWithPeers.map((peer, index) => (
-                            <li key={index}>{peer.name}: {peer.score}</li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+            <section id="analytical-side" class="features" align="center">
+    <h2>Analytical Side</h2>
+    <button type="submit" class="analyse">Click to analyse</button>
+    <div class="pie-chart-container">
+        <div class="pie-chart" align="center">
+            <div class="slice" id="physics"></div>
+            <div class="slice" id="chemistry"></div>
+            <div class="slice" id="maths"></div>
+        </div>
+    </div>
+    <div><h4>Time Spent</h4>
+    <h4>Total Score</h4>
+    <h4>Compare</h4></div>
+</section>
+
+
             <section id="personal-space" className="features">
-                <h2>Personal Space</h2>
-                <div>
-                    <p>Username: {userProfile.username}</p>
-                    <p>Friends:</p>
-                    <ul>
-                        {userProfile.friends.map((friend, index) => (
-                            <li key={index}>{friend}</li>
-                        ))}
-                    </ul>
-                    <p>Groups:</p>
-                    <ul>
-                        {userProfile.groups.map((group, index) => (
-                            <li key={index}>{group}</li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+    <h2>Community</h2>
+    <div class="personal-space-container">
+        <div class="friends-list">
+            <h3>Friends</h3>
+            <form id="add-friend-form">
+                <input type="text" id="friend-input" placeholder="Search friends to learn together" />
+                <input type="text" id="friend-input" placeholder="Enter friend's username" />
+                <button type="submit">Add Friend</button>
+            </form>
+        </div>
+        <div class="groups-list">
+            <h3>Groups</h3>
+            <ul id="groups-list">
+                
+            </ul>
+            <form id="create-group-form">
+                <input type="text" id="group-name-input" placeholder="Enter group name" />
+                <input type="text" id="group-members-input" placeholder="Enter group members' usernames (comma-separated)" />
+                <button type="submit">Create Group</button>
+            </form>
+        </div>
+    </div>
+</section>
+
             <section id="ratings" className="features">
                 <h2>Ratings</h2>
                 <div>
-                    <p>Test Ratings:</p>
-                    <ul>
-                        {Object.entries(testRatings).map(([testId, rating]) => (
-                            <li key={testId}>Test {testId}: {rating}</li>
-                        ))}
-                    </ul>
+                    <label for="tests">Select Test you want to rate</label>
+
+                 <select name="test" id="test">
+                 <option value="test 1">Test 1</option>
+                 <option value="test 2">Test 2</option>
+                 <option value="test 3">Test 3</option>
+                 <option value="tets 4">Test 4</option>
+                </select>
+                    <textarea
+                        value={assessmentData.text}
+                        onChange={handleTextChangeAssessment}
+                        placeholder="Enter your reviews"
+                        required
+                    ></textarea>
+                <button type="submit">Submit Review</button>
                 </div>
             </section>
             <footer>
                 <p>Sign up now to start preparing for your exams!</p>
             </footer>
-            
-            {/* Render Timer component */}
             <Timer />
         </div>
     );
