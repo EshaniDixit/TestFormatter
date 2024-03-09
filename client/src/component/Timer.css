@@ -2,11 +2,11 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #333;
+  background-color: #f3efee00;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  box-shadow: 0 2px 5px rgba(246, 240, 240, 0.2);
+  color: hsl(0, 84%, 49%);
 }
 
 .timer-values {
@@ -32,11 +32,11 @@
   background-color: #4caf50;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: #f4f5ed;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .timer-button:hover {
-  background-color: #45a049;
+  background-color: #c4c662;
 }
