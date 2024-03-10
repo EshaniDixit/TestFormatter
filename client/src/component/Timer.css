@@ -31,11 +31,11 @@
   background-color: #4caf50;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: #f4f5ed;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .timer-button:hover {
-  background-color: #45a049;
+  background-color: #c4c662;
 }
